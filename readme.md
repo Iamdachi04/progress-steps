@@ -1,5 +1,5 @@
 Project Setup & Initialization
-[ ] Initialize a new React project using Vite (vite create progress-steps-app --template react).
+[X] Initialize a new React project using Vite (vite create progress-steps-app --template react).
 
 [ ] Install necessary dependencies for a test runner (e.g., Vitest, React Testing Library).
 
