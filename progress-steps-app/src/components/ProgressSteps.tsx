@@ -32,6 +32,13 @@ const ProgressSteps :React.FC= () => {
             setCurrentStep(currentStep);
         }
     }
+
+    const handleRestart = ()=>{
+        setCurrentStep(1);
+        setIsNextVisible(true);
+        setIsPrevVisible(false);
+        setIsSubmitVisible(false);
+    }
     
     
     function handleSubmit(): void {
@@ -56,6 +63,9 @@ const ProgressSteps :React.FC= () => {
               {isSubmitVisible ||  currentStep === 5 &&(
                   <button onClick={handleSubmit}>click me to submit</button>
               )}
+                {currentStep === 5 &&  (
+                    <button onClick={handleRestart}>click me to restart</button>
+                )}
         </div>
     )
 

@@ -25,9 +25,9 @@ Logic & State Management
 
 [X] In ProgressSteps.jsx, define handlePrev function to decrement currentStep (min 1).
 
-[ ] In ProgressSteps.jsx, define handleSubmit function to process form data.
+[X] In ProgressSteps.jsx, define handleSubmit function to process form data.
 
-[ ] In ProgressSteps.jsx, define handleRestart function to reset currentStep to 1 and clear formData.
+[X] In ProgressSteps.jsx, define handleRestart function to reset currentStep to 1 and clear formData.
 
 [ ] In FinalStepForm.jsx, implement controlled components for name and surname inputs that update parent formData state.
 
