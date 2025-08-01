@@ -1,9 +1,9 @@
 Project Setup & Initialization
 [X] Initialize a new React project using Vite (vite create progress-steps-app --template react).
 
-[ ] Install necessary dependencies for a test runner (e.g., Vitest, React Testing Library).
+[X] Install necessary dependencies for a test runner (e.g., Vitest, React Testing Library).
 
-[ ] Set up the basic project structure and files (src/components/, src/utils/, etc.).
+[X] Set up the basic project structure and files (src/components/, src/utils/, etc.).
 
 Core Component Development
 [ ] Create src/components/ProgressSteps.jsx as the main container component.
