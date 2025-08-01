@@ -5,10 +5,19 @@ const ProgressSteps :React.FC= () => {
     
     const totalsteps = 5;
 
-    const handlestepclick = ()=>{
+    const handlenext = ()=>{
         if (currentStep < totalsteps) {
             setCurrentStep(currentStep + 1);
         } else {
+            setCurrentStep(currentStep);
+        }
+    }
+
+    const handlePrev=()=>{
+        if(currentStep>1){
+            setCurrentStep(currentStep-1);
+        }
+        else{
             setCurrentStep(currentStep);
         }
     }
@@ -20,8 +29,8 @@ const ProgressSteps :React.FC= () => {
             <div className="step-number">{currentStep}</div>
 
            </div>
-              <button onClick={handlestepclick}></button>
-
+              <button onClick={handlenext}>click me to increment</button>
+              <button onClick={handlePrev}>click me to decrement</button>
         </div>
     )
 
