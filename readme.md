@@ -6,22 +6,22 @@ Project Setup & Initialization
 [X] Set up the basic project structure and files (src/components/, src/utils/, etc.).
 
 Core Component Development
-[ ] Create src/components/ProgressSteps.jsx as the main container component.
+[X] Create src/components/ProgressSteps.jsx as the main container component.
 
-[ ] Implement useState hooks for currentStep, submissions, and formData in ProgressSteps.jsx.
+[X] Implement useState hooks for currentStep, submissions, and formData in ProgressSteps.jsx.
 
-[ ] Create src/components/NavigationButtons.jsx.
+[X] Create src/components/NavigationButtons.jsx.
 
-[ ] Create src/components/ProgressBar.jsx.
+[X] Create src/components/ProgressBar.jsx.
 
-[ ] Create src/components/FinalStepForm.jsx for the input fields.
+[X] Create src/components/FinalStepForm.jsx for the input fields.
 
-[ ] Create src/components/SubmissionList.jsx to display submitted data.
+[X] Create src/components/SubmissionList.jsx to display submitted data.
 
-[ ] Create src/components/RestartButton.jsx.
+[X] Create src/components/RestartButton.jsx.
 
 Logic & State Management
-[ ] In ProgressSteps.jsx, define handleNext function to increment currentStep (max 5).
+[X] In ProgressSteps.jsx, define handleNext function to increment currentStep (max 5).
 
 [ ] In ProgressSteps.jsx, define handlePrev function to decrement currentStep (min 1).
 
