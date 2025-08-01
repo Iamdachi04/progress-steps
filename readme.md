@@ -23,7 +23,7 @@ Core Component Development
 Logic & State Management
 [X] In ProgressSteps.jsx, define handleNext function to increment currentStep (max 5).
 
-[ ] In ProgressSteps.jsx, define handlePrev function to decrement currentStep (min 1).
+[X] In ProgressSteps.jsx, define handlePrev function to decrement currentStep (min 1).
 
 [ ] In ProgressSteps.jsx, define handleSubmit function to process form data.
 

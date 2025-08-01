@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 const ProgressSteps :React.FC= () => {
+    const [isPrevVisible , setIsPrevVisible] = useState(false);
+    const [isNextVisible , setIsNextVisible] = useState(true);
+    const [isSubmitVisible , setIsSubmitVisible] = useState(false);
     const [currentStep, setCurrentStep] = useState(1);
     
     const totalsteps = 5;
@@ -8,7 +11,12 @@ const ProgressSteps :React.FC= () => {
     const handlenext = ()=>{
         if (currentStep < totalsteps) {
             setCurrentStep(currentStep + 1);
+            setIsSubmitVisible(false);
+            setIsPrevVisible(true);
         } else {
+            setIsNextVisible(false);
+            setIsPrevVisible(true);
+            setIsSubmitVisible(true)
             setCurrentStep(currentStep);
         }
     }
@@ -16,21 +24,38 @@ const ProgressSteps :React.FC= () => {
     const handlePrev=()=>{
         if(currentStep>1){
             setCurrentStep(currentStep-1);
+            setIsNextVisible(true);
         }
-        else{
+        else if(currentStep===1){
+            setIsPrevVisible(false);
+            setIsNextVisible(true);
             setCurrentStep(currentStep);
         }
     }
     
     
+    function handleSubmit(): void {
+        setIsNextVisible(false);
+        setIsPrevVisible(false);
+        setIsSubmitVisible(false);
+    }
+
     return (
         <div className="progress-steps">
            <div className="step">
             <div className="step-number">{currentStep}</div>
 
            </div>
-              <button onClick={handlenext}>click me to increment</button>
-              <button onClick={handlePrev}>click me to decrement</button>
+              {isNextVisible &&  currentStep !== 5 && (
+                 <button onClick={handlenext}>{isNextVisible && "click me to increment"}</button>
+              )}
+             
+              {isPrevVisible &&  currentStep !== 1 && (
+                  <button onClick={handlePrev}>click me to decrement</button>
+              )}
+              {isSubmitVisible ||  currentStep === 5 &&(
+                  <button onClick={handleSubmit}>click me to submit</button>
+              )}
         </div>
     )
 
