@@ -1,13 +1,21 @@
 import { useState } from "react";
 
 import NavigationButtons from './NavigationButtons'; 
-
+import FinalStepForm from './FinalStepForm';
 const ProgressSteps :React.FC= () => {
 
 
  const [currentStep, setCurrentStep] = useState(1);
     const [formData, setFormData] = useState({ name: "", surname: "" });
     const totalsteps = 5;
+    const renderStepContent = () => {
+        switch (currentStep) {
+            case 5:
+                return <FinalStepForm formData={formData} setFormData={setFormData} />;
+            default:
+                return <div>{currentStep}</div>;
+        }
+    };
 
     const handlenext = () => {
         if (currentStep < totalsteps) {
@@ -28,9 +36,7 @@ const ProgressSteps :React.FC= () => {
   return (
         <div className="progress-steps">
 
-            <div className="step">
-                <div className="step-number">{currentStep}</div>
-            </div>
+            <h1>Progress Steps</h1>
             
             <NavigationButtons
                 currentStep={currentStep}
@@ -39,6 +45,9 @@ const ProgressSteps :React.FC= () => {
                 onPrev={handlePrev}
                 onSubmit={handleSubmit}
             />
+            <div className="step-content">
+                {renderStepContent()}
+            </div>
         </div>
     )
 }
