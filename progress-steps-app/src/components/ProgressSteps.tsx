@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import NavigationButtons from './NavigationButtons'; 
 
 const ProgressSteps :React.FC= () => {
@@ -26,6 +27,7 @@ const ProgressSteps :React.FC= () => {
 
   return (
         <div className="progress-steps">
+
             <div className="step">
                 <div className="step-number">{currentStep}</div>
             </div>
