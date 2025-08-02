@@ -29,10 +29,10 @@ Logic & State Management
 
 [X] In ProgressSteps.jsx, define handleRestart function to reset currentStep to 1 and clear formData.
 
-[ ] In FinalStepForm.jsx, implement controlled components for name and surname inputs that update parent formData state.
+[X] In FinalStepForm.jsx, implement controlled components for name and surname inputs that update parent formData state.
 
 UI & Styling
-[ ] In ProgressSteps.jsx, conditionally render the FinalStepForm only when currentStep === 5.
+[X] In ProgressSteps.jsx, conditionally render the FinalStepForm only when currentStep === 5.
 
 [ ] In ProgressBar.jsx, implement dynamic styling based on the currentStep prop to show active, complete, and future steps.
 
