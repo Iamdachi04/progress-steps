@@ -1,74 +1,44 @@
 import { useState } from "react";
+import NavigationButtons from './NavigationButtons'; 
 
 const ProgressSteps :React.FC= () => {
-    const [isPrevVisible , setIsPrevVisible] = useState(false);
-    const [isNextVisible , setIsNextVisible] = useState(true);
-    const [isSubmitVisible , setIsSubmitVisible] = useState(false);
-    const [currentStep, setCurrentStep] = useState(1);
-    
+
+
+ const [currentStep, setCurrentStep] = useState(1);
+    const [formData, setFormData] = useState({ name: "", surname: "" });
     const totalsteps = 5;
 
-    const handlenext = ()=>{
+    const handlenext = () => {
         if (currentStep < totalsteps) {
             setCurrentStep(currentStep + 1);
-            setIsSubmitVisible(false);
-            setIsPrevVisible(true);
-        } else {
-            setIsNextVisible(false);
-            setIsPrevVisible(true);
-            setIsSubmitVisible(true)
-            setCurrentStep(currentStep);
         }
     }
 
-    const handlePrev=()=>{
-        if(currentStep>1){
-            setCurrentStep(currentStep-1);
-            setIsNextVisible(true);
-        }
-        else if(currentStep===1){
-            setIsPrevVisible(false);
-            setIsNextVisible(true);
-            setCurrentStep(currentStep);
+    const handlePrev = () => {
+        if (currentStep > 1) {
+            setCurrentStep(currentStep - 1);
         }
     }
-
-    const handleRestart = ()=>{
-        setCurrentStep(1);
-        setIsNextVisible(true);
-        setIsPrevVisible(false);
-        setIsSubmitVisible(false);
-    }
-    
     
     function handleSubmit(): void {
-        setIsNextVisible(false);
-        setIsPrevVisible(false);
-        setIsSubmitVisible(false);
+        console.log("Submitting form with data:", formData);
     }
 
-    return (
+  return (
         <div className="progress-steps">
-           <div className="step">
-            <div className="step-number">{currentStep}</div>
-
-           </div>
-              {isNextVisible &&  currentStep !== 5 && (
-                 <button onClick={handlenext}>{isNextVisible && "click me to increment"}</button>
-              )}
-             
-              {isPrevVisible &&  currentStep !== 1 && (
-                  <button onClick={handlePrev}>click me to decrement</button>
-              )}
-              {isSubmitVisible ||  currentStep === 5 &&(
-                  <button onClick={handleSubmit}>click me to submit</button>
-              )}
-                {currentStep === 5 &&  (
-                    <button onClick={handleRestart}>click me to restart</button>
-                )}
+            <div className="step">
+                <div className="step-number">{currentStep}</div>
+            </div>
+            
+            <NavigationButtons
+                currentStep={currentStep}
+                totalSteps={totalsteps}
+                onNext={handlenext}
+                onPrev={handlePrev}
+                onSubmit={handleSubmit}
+            />
         </div>
     )
-
 }
 
 export default ProgressSteps;
