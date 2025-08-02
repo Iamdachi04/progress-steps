@@ -1,11 +1,15 @@
 import { useState } from "react";
+import FinalStepForm from "./FinalStepForm";
 
 const ProgressSteps :React.FC= () => {
     const [isPrevVisible , setIsPrevVisible] = useState(false);
     const [isNextVisible , setIsNextVisible] = useState(true);
     const [isSubmitVisible , setIsSubmitVisible] = useState(false);
     const [currentStep, setCurrentStep] = useState(1);
-    
+    const [formData, setFormData] = useState({
+      name: "",
+      surname: "",
+    });
     const totalsteps = 5;
 
     const handlenext = ()=>{
@@ -53,6 +57,13 @@ const ProgressSteps :React.FC= () => {
             <div className="step-number">{currentStep}</div>
 
            </div>
+           {currentStep === totalsteps ? (
+              <FinalStepForm formData={formData} setFormData={setFormData} />
+            ) : (
+              <div>
+                This is the content for Step {currentStep}.
+              </div>
+            )}
               {isNextVisible &&  currentStep !== 5 && (
                  <button onClick={handlenext}>{isNextVisible && "click me to increment"}</button>
               )}
