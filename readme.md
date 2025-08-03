@@ -34,13 +34,13 @@ Logic & State Management
 UI & Styling
 [X] In ProgressSteps.jsx, conditionally render the FinalStepForm only when currentStep === 5.
 
-[ ] In ProgressBar.jsx, implement dynamic styling based on the currentStep prop to show active, complete, and future steps.
+[X] In ProgressBar.jsx, implement dynamic styling based on the currentStep prop to show active, complete, and future steps.
 
-[ ] In NavigationButtons.jsx, implement logic to disable the "Prev" button on step 1.
+[X] In NavigationButtons.jsx, implement logic to disable the "Prev" button on step 1.
 
-[ ] In NavigationButtons.jsx, implement logic to change the "Next" button text to "Submit" on step 5.
+[X] In NavigationButtons.jsx, implement logic to change the "Next" button text to "Submit" on step 5.
 
-[ ] In NavigationButtons.jsx, implement logic to disable the "Submit" button on step 5.
+[X] In NavigationButtons.jsx, implement logic to disable the "Submit" button on step 5.
 
 [ ] In SubmissionList.jsx, implement mapping over the submissions array to display each entry.
 
