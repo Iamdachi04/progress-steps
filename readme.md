@@ -42,9 +42,9 @@ UI & Styling
 
 [X] In NavigationButtons.jsx, implement logic to disable the "Submit" button on step 5.
 
-[ ] In SubmissionList.jsx, implement mapping over the submissions array to display each entry.
+[X] In SubmissionList.jsx, implement mapping over the submissions array to display each entry.
 
-[ ] In ProgressSteps.jsx, place the RestartButton above the SubmissionList component.
+[X] In ProgressSteps.jsx, place the RestartButton above the SubmissionList component.
 
 Validation & Error Handling
 [ ] Create src/utils/validation.js and export a validateName function.
