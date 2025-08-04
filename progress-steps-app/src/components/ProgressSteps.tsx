@@ -2,7 +2,17 @@ import { useState } from "react";
 
 import NavigationButtons from './NavigationButtons'; 
 import FinalStepForm from './FinalStepForm';
-const ProgressSteps :React.FC= () => {
+
+
+interface Submission {
+ name: string;
+ surname: string;
+}
+interface ProgressStepsProps {
+ onAddSubmission: (newSubmission: Submission) => void;
+}
+
+const ProgressSteps: React.FC<ProgressStepsProps> = ({ onAddSubmission }) => {
 
 
  const [currentStep, setCurrentStep] = useState(1);
@@ -31,6 +41,9 @@ const ProgressSteps :React.FC= () => {
     
     function handleSubmit(): void {
         console.log("Submitting form with data:", formData);
+        onAddSubmission(formData);
+        setFormData({ name: "", surname: "" });
+        setCurrentStep(1);
     }
 
   return (
