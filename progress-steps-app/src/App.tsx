@@ -1,4 +1,4 @@
-import ProgressSteps from './components/ProgressSteps'
+import ProgressApp from './components/ProgressApp'
 import './App.css'
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <ProgressSteps />
+      <ProgressApp />
     </>
   )
 }
